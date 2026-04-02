@@ -13,13 +13,14 @@
     <link rel="shortcut icon" href="/resurse/imagini/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/resurse/imagini/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/resurse/imagini/favicon/site.webmanifest" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkR4j8R9iQ8K/ux6pbn6PEnBhV0P8izPKzCw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/resurse/css/reset.css">
     <link rel="stylesheet" href="/resurse/css/general.css" type="text/css"/>
+    <link rel="stylesheet" href="/resurse/css/printare.css" media="print">
 </head>
 
 <body>
@@ -28,28 +29,45 @@
         <h1><i class="fa-solid fa-microchip" aria-hidden="true"></i> Parts For PC</h1>
         <img src="/resurse/imagini/sigla.png" alt="sigla">
         <nav>
-            <ul>
-                <li>Acasa
+            <input type="checkbox" id="ch-menu">
+            <label for="ch-menu" class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+
+            <ul class="meniu">
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Acasă</span>
+                    </a>
                     <ul>
-                        <li><a href="#welcome">Bine ai venit !</a></li>
-                        <li><a href="#anunturi">Anunturi</a></li>
-                        <li><a href="#index-intrebari">Intrebari frecvente</a></li>
+                        <li><a href="#welcome">Bine ai venit</a></li>
+                        <li><a href="#anunturi">Anunțuri</a></li>
+                        <li><a href="#index-intrebari">Întrebări frecvente</a></li>
                     </ul>
                 </li>
 
-                <li>Despre
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>Despre</span>
+                    </a>
                     <ul>
-                        <li><a href="#montare">Montare Piese</a></li>
-                        <li><a href="#orar">Orarul Nostru</a></li>
-                        <li><a href="#contact">Pentru Contact</a></li>
+                        <li><a href="#montare">Montare piese</a></li>
+                        <li><a href="#orar">Orarul nostru</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </li>
 
-                <li>Produse
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-computer"></i>
+                        <span>Produse</span>
+                    </a>
                     <ul>
                         <li><a href="#cpu">CPU</a></li>
-                        <li><a href="#gpu"><dfn>GPU</dfn></a></li>
-                        <li><a href="#carcasa">Carcasa</a></li>
+                        <li><a href="#gpu">GPU</a></li>
+                        <li><a href="#carcasa">Carcasă</a></li>
                         <li><a href="#ram">Memorie RAM</a></li>
                         <li><a href="#psu">Surse</a></li>
                     </ul>
@@ -442,8 +460,9 @@
             <span class="cerc">
                 <span class="sageata">&#8593;</span>
             </span>
-        </a>    
- 
+        </a> 
+           
+        <p id="banner-print">Acesta este un proiect școlar!</p>
     </footer>
 </body>
 </html>

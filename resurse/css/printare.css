@@ -1,0 +1,151 @@
+@media print {
+
+  @page {
+    margin-top: 1.5cm;
+    margin-bottom: 1.5cm;
+  }
+
+  @page :left {
+    margin-left: 2.5cm;
+    margin-right: 0.5cm;
+  }
+
+  @page :right {
+    margin-left: 0.5cm;
+    margin-right: 2.5cm;
+  }
+
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-family: serif;
+    position: relative;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background-image: none !important;
+  }
+
+  a,
+  a:visited {
+    color: black !important;
+    text-decoration: none !important;
+  }
+
+  nav,
+  #link-top,
+  img,
+  picture,
+  figure,
+  figcaption,
+  video,
+  iframe,
+  embed,
+  object,
+  audio,
+  svg,
+  .container-iframe,
+  .taburi-iframe {
+    display: none !important;
+  }
+
+  header,
+  footer,
+  #grid-pagina > section,
+  #grid-pagina > div,
+  #zona-stanga > section,
+  #produse section {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  #grid-pagina,
+  #zona-jos,
+  #zona-stanga,
+  #produse,
+  #dv-prezentare,
+  #grid-galerie {
+    display: block !important;
+  }
+
+  /* banner pe prima pagina */
+  body::before {
+    content: "Acesta este un proiect școlar!";
+    display: block;
+    width: 80%;
+    margin: 0 auto 2cm auto;
+    padding: 0.35cm 0.5cm;
+    text-align: center;
+    border: 3px dotted black;
+    font-weight: bold;
+  }
+
+  /* heading-ul pe prima pagina */
+  header {
+    break-after: page;
+    page-break-after: always;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  header img {
+    display: none !important;
+  }
+
+  header h1 {
+    display: block !important;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 2.5rem !important;
+    margin: 35vh 0 0 0;
+  }
+
+  /* footer pe pagina noua */
+  footer {
+    break-before: page;
+    page-break-before: always;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* watermark pe fiecare pagina */
+  body::after {
+    content: "Ilie Eduard George";
+    position: fixed;
+    bottom: 1cm;
+    right: 0.5cm;
+    width: 100px;
+    height: 2cm;
+    border: 3px double black;
+    opacity: 0.65;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    text-align: center;
+    transform: rotate(-15deg);
+    z-index: 9999;
+    background: white !important;
+  }
+
+  /* bannerul din footer nu mai este afisat acolo la print,
+     pentru ca este mutat vizual pe prima pagina prin body::before */
+  #banner-print {
+    display: none !important;
+  }
+
+  /* linkurile apar ca text normal */
+  a[href]::after {
+    content: "";
+  }
+}

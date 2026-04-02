@@ -1,101 +1,252 @@
-$nul: 0;
+$inaltime-meniu: 56px;
+$latime-submeniu: 240px;
+$culoare-meniu: #000;
+$culoare-submeniu: #111;
+$culoare-hover: var(--culoare-3);
+$durata: 0.35s;
+$border-light: rgba(255, 255, 255, 0.14);
+$shadow-hover: inset 0 0 18px rgba(255, 255, 255, 0.22);
 
-
-nav{
-    --latime-buton: 120px;
-    --inaltime-buton: 30px;
-    background-color: var(--culoare-contur);
+#ch-menu {
+  display: none;
 }
 
-ul.meniu, ul.meniu  ul{
-    list-style-type: none;
-    padding: $nul;
-    margin: $nul;
+.hamburger {
+  display: none;
+  width: 56px;
+  height: 56px;
+  margin-top: 18px;
+  border-radius: 10px;
+  background: $culoare-meniu;
+  color: white;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 0 0 1px $border-light inset;
+  transition: box-shadow $durata ease, background-color $durata ease, color $durata ease;
+
+  &:hover {
+    color: $culoare-hover;
+    box-shadow: $shadow-hover;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
 }
 
-#hamburger, #ch-menu{
-    display: none;
-}
+.meniu {
+  list-style: none;
+  margin: 18px 0 0 0;
+  padding: 0;
+  display: flex;
+  background: $culoare-meniu;
+  border-radius: 10px;
+  overflow: visible;
+  position: relative;
+  z-index: 50;
 
-.text-icon, .imag-icon{
-    display: inline-block;
-}
+  li {
+    list-style: none;
+  }
 
-ul.meniu{
-    display: flex;
-    position: relative;
-}
-
-
-ul.meniu {
-    ul{
-    display: none;
-    animation: animatie_submeniu 1s linear;
-    transform-origin: center top;
-      }
-
-      li{
-    cursor: pointer;
-    width:var(--latime-buton);
-    height:var(--inaltime-buton);
-    background-color: var(--culoare-fundal);
-    border: 1px solid var(--culoare-contur);
-    color: black;
-    text-align: center;
-    line-height: var(--inaltime-buton);
-    /* text-decoration: none; */
-    /* margin-right: 10px; */
-    transition: all 1s linear;
-      }
-    }
-
-
-    
-@keyframes animatie_submeniu {
-    0%{
-        opacity: 0;
-        transform: scale(0,0);
-    }
-    50%{
-        transform: scale(0.5,1);
-    }
-    100%{
-        opacity: 1;
-        transform: scale(1,1);
-    }
-}
-
-
-ul.meniu>li:hover ul{
-    display: block;
-    position: absolute;
-    z-index: 10;
-}
-
-
-ul.meniu li{
-    cursor: pointer;
-    width:var(--latime-buton);
-    height:var(--inaltime-buton);
-    background-color: var(--culoare-fundal);
-    border: 1px solid var(--culoare-contur);
-    color: black;
-    text-align: center;
-    line-height: var(--inaltime-buton);
-    /* text-decoration: none; */
-    /* margin-right: 10px; */
-    transition: all 1s linear;
-}
-
-ul.meniu a{
+  a {
     text-decoration: none;
-    color: inherit;
-    display: block;
-    width: 100%;
-    height: 100%;
+    color: white;
+  }
+
+  > li {
+    flex: 1 1 0;
+    position: relative;
+    min-width: 0;
+
+    > a {
+      height: $inaltime-meniu;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 16px;
+      font-weight: 600;
+      border-right: 1px solid $border-light;
+      transition: color $durata ease, box-shadow $durata ease, background-color $durata ease;
+
+      i {
+        display: inline-block;
+        color: white;
+        font-size: 1rem;
+        flex: 0 0 auto;
+      }
+
+      span {
+        display: inline-block;
+      }
+
+      &:hover {
+        color: $culoare-hover;
+        box-shadow: $shadow-hover;
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      &:hover i {
+        color: $culoare-hover;
+      }
+    }
+
+    &:last-child > a {
+      border-right: none;
+    }
+
+    > ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: $latime-submeniu;
+      background: $culoare-submeniu;
+      border-radius: 0 0 10px 10px;
+      overflow: hidden;
+      transform: scaleY(0);
+      transform-origin: top;
+      opacity: 0;
+      visibility: hidden;
+      transition: transform $durata ease, opacity $durata ease, visibility $durata ease;
+
+      > li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        > a {
+          display: block;
+          position: relative;
+          padding: 14px 16px 14px 38px;
+          transition: background-color $durata ease, color $durata ease, padding-left $durata ease;
+
+          &::before {
+            content: "➜";
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translate(-18px, -50%);
+            opacity: 0;
+            transition: transform $durata ease, opacity $durata ease;
+          }
+
+          &:hover {
+            color: $culoare-hover;
+            background-color: rgba(255, 255, 255, 0.06);
+            padding-left: 48px;
+          }
+
+          &:hover::before {
+            transform: translate(0, -50%);
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &:hover > ul {
+      transform: scaleY(1);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 }
 
-ul.meniu li:hover{
-    background-color: var(--culoare-contur);
-    color: white;
+/* ECRAN MEDIU */
+@media screen and (max-width: 1000px) {
+  .meniu {
+    > li {
+      > a {
+        justify-content: center;
+        padding: 0 10px;
+
+        span {
+          display: none;
+        }
+
+        i {
+          margin-right: 0;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+/* ECRAN MIC */
+@media screen and (max-width: 700px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .meniu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 12px;
+
+    > li {
+      width: 100%;
+
+      > a {
+        justify-content: flex-start;
+        padding: 14px 16px;
+        border-right: none;
+        border-bottom: 1px solid $border-light;
+        gap: 12px;
+
+        span {
+          display: inline-block;
+        }
+
+        i {
+          font-size: 1rem;
+        }
+      }
+
+      &:last-child > a {
+        border-bottom: none;
+      }
+
+      > ul {
+        position: static;
+        min-width: 100%;
+        border-radius: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+        max-height: 0;
+        opacity: 0;
+        visibility: visible;
+        overflow: hidden;
+        transition: transform $durata ease, max-height $durata ease, opacity $durata ease;
+
+        > li > a {
+          &::before {
+            content: none;
+          }
+
+          &:hover {
+            padding-left: 38px;
+            box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.22);
+          }
+        }
+      }
+
+      &:hover > ul,
+      &:focus-within > ul {
+        transform: scaleY(1);
+        max-height: 500px;
+        opacity: 1;
+      }
+    }
+  }
+
+  #ch-menu:checked + .hamburger + .meniu {
+    display: flex;
+ }
 }
