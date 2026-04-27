@@ -1,80 +1,205 @@
-nav{
-    --latime-buton: 120px;
-    --inaltime-buton: 30px;
-    background-color: var(--culoare-contur);
+@charset "UTF-8";
+#ch-menu {
+  display: none;
 }
 
-ul.meniu, ul.meniu  ul{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+.hamburger {
+  display: none;
+  width: 56px;
+  height: 56px;
+  margin-top: 18px;
+  border-radius: 10px;
+  background: #000;
+  color: white;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14) inset;
+  transition: box-shadow 0.35s ease, background-color 0.35s ease, color 0.35s ease;
+}
+.hamburger:hover {
+  color: var(--culoare-3);
+  box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.22);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
-#hamburger, #ch-menu{
+.meniu {
+  list-style: none;
+  margin: 18px 0 0 0;
+  padding: 0;
+  display: flex;
+  background: #000;
+  border-radius: 10px;
+  overflow: visible;
+  position: relative;
+  z-index: 50;
+}
+.meniu li {
+  list-style: none;
+}
+.meniu a {
+  text-decoration: none;
+  color: white;
+}
+.meniu > li {
+  flex: 1 1 0;
+  position: relative;
+  min-width: 0;
+}
+.meniu > li > a {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  font-weight: 600;
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+  transition: color 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease;
+}
+.meniu > li > a i {
+  display: inline-block;
+  color: white;
+  font-size: 1rem;
+  flex: 0 0 auto;
+}
+.meniu > li > a span {
+  display: inline-block;
+}
+.meniu > li > a:hover {
+  color: var(--culoare-3);
+  box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.22);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.meniu > li > a:hover i {
+  color: var(--culoare-3);
+}
+.meniu > li:last-child > a {
+  border-right: none;
+}
+.meniu > li > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  background: #111;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s ease;
+}
+.meniu > li > ul > li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.meniu > li > ul > li:last-child {
+  border-bottom: none;
+}
+.meniu > li > ul > li > a {
+  display: block;
+  position: relative;
+  padding: 14px 16px 14px 38px;
+  transition: background-color 0.35s ease, color 0.35s ease, padding-left 0.35s ease;
+}
+.meniu > li > ul > li > a::before {
+  content: "➜";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translate(-18px, -50%);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+.meniu > li > ul > li > a:hover {
+  color: var(--culoare-3);
+  background-color: rgba(255, 255, 255, 0.06);
+  padding-left: 48px;
+}
+.meniu > li > ul > li > a:hover::before {
+  transform: translate(0, -50%);
+  opacity: 1;
+}
+.meniu > li:hover > ul {
+  transform: scaleY(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ECRAN MEDIU */
+@media screen and (max-width: 1000px) {
+  .meniu > li > a {
+    justify-content: center;
+    padding: 0 10px;
+  }
+  .meniu > li > a span {
     display: none;
+  }
+  .meniu > li > a i {
+    margin-right: 0;
+    font-size: 1.2rem;
+  }
 }
-
-.text-icon, .imag-icon{
-    display: inline-block;
-}
-
-ul.meniu{
+/* ECRAN MIC */
+@media screen and (max-width: 700px) {
+  .hamburger {
     display: flex;
-    position: relative;
-}
-
-
-ul.meniu  ul{
+  }
+  .meniu {
     display: none;
-    animation: animatie_submeniu 1s linear;
-    transform-origin: center top;
-}
-
-@keyframes animatie_submeniu {
-    0%{
-        opacity: 0;
-        transform: scale(0,0);
-    }
-    50%{
-        transform: scale(0.5,1);
-    }
-    100%{
-        opacity: 1;
-        transform: scale(1,1);
-    }
-}
-
-
-ul.meniu>li:hover ul{
-    display: block;
-    position: absolute;
-    z-index: 10;
-}
-
-
-ul.meniu li{
-    cursor: pointer;
-    width:var(--latime-buton);
-    height:var(--inaltime-buton);
-    background-color: var(--culoare-fundal);
-    border: 1px solid var(--culoare-contur);
-    color: black;
-    text-align: center;
-    line-height: var(--inaltime-buton);
-    /* text-decoration: none; */
-    /* margin-right: 10px; */
-    transition: all 1s linear;
-}
-
-ul.meniu a{
-    text-decoration: none;
-    color: inherit;
-    display: block;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
-}
-
-ul.meniu li:hover{
-    background-color: var(--culoare-contur);
-    color: white;
+    margin-top: 12px;
+  }
+  .meniu > li {
+    width: 100%;
+  }
+  .meniu > li > a {
+    justify-content: flex-start;
+    padding: 14px 16px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    gap: 12px;
+  }
+  .meniu > li > a span {
+    display: inline-block;
+  }
+  .meniu > li > a i {
+    font-size: 1rem;
+  }
+  .meniu > li:last-child > a {
+    border-bottom: none;
+  }
+  .meniu > li > ul {
+    position: static;
+    min-width: 100%;
+    border-radius: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    max-height: 0;
+    opacity: 0;
+    visibility: visible;
+    overflow: hidden;
+    transition: transform 0.35s ease, max-height 0.35s ease, opacity 0.35s ease;
+  }
+  .meniu > li > ul > li > a::before {
+    content: none;
+  }
+  .meniu > li > ul > li > a:hover {
+    padding-left: 38px;
+    box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.22);
+  }
+  .meniu > li:hover > ul, .meniu > li:focus-within > ul {
+    transform: scaleY(1);
+    max-height: 500px;
+    opacity: 1;
+  }
+  #ch-menu:checked + .hamburger + .meniu {
+    display: flex;
+  }
 }

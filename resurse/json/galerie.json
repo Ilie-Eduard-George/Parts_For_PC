@@ -1,0 +1,106 @@
+{
+  "cale_galerie" :"resurse/imagini/galerie",
+    "imagini": [
+        {
+        "fisier": "Ryzen 3 4100.png",
+        "descriere": "Ryzen 3 4100",
+        "anotimp": ["vara", "iarna", "primavara", "toamna"]
+        },
+        {
+        "fisier": "Ryzen 5 5600X.png",
+        "descriere": "Ryzen 5 5600X",
+        "anotimp": ["vara", "toamna"]
+        },
+        {
+        "fisier": "Ryzen 5 7600.png",
+        "descriere": "Ryzen 5 7600",
+        "anotimp": ["primavara", "toamna", "iarna"]
+        },
+        {
+        "fisier": "Ryzen 7 5800X.png",
+        "descriere": "Ryzen 7 5800X",
+        "anotimp": ["vara", "iarna", "primavara", "toamna"]
+        },
+        {
+        "fisier": "Ryzen 7 7700X.png",
+        "descriere": "Ryzen 7 7700X",
+        "anotimp": ["vara", "primavara"]
+        },
+        {
+        "fisier": "Core i3 10100F.png",
+        "descriere": "Core i3 10100F",
+        "anotimp": ["vara", "primavara", "iarna"]
+        },
+        {
+        "fisier": "Core i5 12600K.png",
+        "descriere": "Core i5 12600K",
+        "anotimp": ["vara","iarna"]
+        },
+        {
+        "fisier": "Core i7 10700K.png",
+        "descriere": "Core i7 10700K",
+        "anotimp": ["iarna"]
+        },
+        {
+        "fisier": "Core i7 12700K.png",
+        "descriere": "Core i7 12700K",
+        "anotimp": ["iarna", "toamna"]
+        },
+        {
+        "fisier": "Core i9 12900K.png",
+        "descriere": "Core i9 12900K",
+        "anotimp": ["vara", "toamna"]
+        },
+        {
+        "fisier": "NVIDIA 3060.png",
+        "descriere": "NVIDIA GeForce RTX 3060",
+        "anotimp": ["primavara", "toamna"]
+        },
+        {
+        "fisier": "NVIDIA 3090.png",
+        "descriere": "NVIDIA GeForce RTX 3090",
+        "anotimp": ["primavara", "toamna", "iarna"]
+        },
+        {
+        "fisier": "NVIDIA 4070.png",
+        "descriere": "NVIDIA GeForce RTX 4070",
+        "anotimp": ["toamna"]
+        },
+        {
+        "fisier": "NVIDIA 4090.png",
+        "descriere": "NVIDIA GeForce RTX 4090",
+        "anotimp": ["toamna", "iarna"]
+        },
+        {
+        "fisier": "NVIDIA 5090.png",
+        "descriere": "NVIDIA GeForce RTX 5090",
+        "anotimp": ["iarna"]
+        },
+        {
+        "fisier": "RX 580.png",
+        "descriere": "NVIDIA GeForce RTX 5090",
+        "anotimp": ["primavara", "toamna", "iarna", "vara"]
+        },
+        {
+        "fisier": "RX 590.png",
+        "descriere": "NVIDIA GeForce RTX 5090",
+        "anotimp": ["primavara", "toamna", "iarna"]
+        },
+        {
+        "fisier": "RX 6600.png",
+        "descriere": "NVIDIA GeForce RTX 5090",
+        "anotimp": ["primavara", "iarna"]
+        },
+        {
+        "fisier": "RX 6900.png",
+        "descriere": "NVIDIA GeForce RTX 5090",
+        "anotimp": ["primavara", "iarna", "vara"]
+        },
+        {
+        "fisier": "RX 7900.png",
+        "descriere": "NVIDIA GeForce RTX 7900",
+        "anotimp": ["primavara", "vara", "toamna"]
+        }
+    ]   
+
+}
