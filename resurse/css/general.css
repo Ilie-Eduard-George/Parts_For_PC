@@ -620,18 +620,51 @@ mi + mo {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
+<<<<<<< HEAD
 video::cue {
   background: linear-gradient(90deg, #0f172a, #1e3a8a, #312e81);
+=======
+
+
+
+
+
+
+.video-container {
+  position: relative;
+  width: 80%;
+  min-width: 280px;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  background-color: #000;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+video::cue {
+  background: linear-gradient(90deg,var(--culoare-4), #1e3a8a, #312e81);
+>>>>>>> bb77d6396acf310bb471b44a15b45fbf47317405
   color: transparent;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
+<<<<<<< HEAD
+=======
+
+>>>>>>> bb77d6396acf310bb471b44a15b45fbf47317405
   font-size: 1.15rem;
   font-weight: 700;
   line-height: 1.4;
   white-space: pre-line;
 }
 
+<<<<<<< HEAD
 /* Linkuri în conținut */
 .continut-pagina a {
   color: var(--culoare-3);
@@ -651,6 +684,21 @@ video::cue {
 }
 
 .continut-pagina a[href^=http]::before {
+=======
+
+
+
+.continut-pagina a {
+  color: var(--culoare-3);
+  text-decoration: none;
+}
+
+.continut-paginaa:visited {
+  color: var(--culoare-2);
+}
+
+.continut-paginaa[href^="http"]::before {
+>>>>>>> bb77d6396acf310bb471b44a15b45fbf47317405
   content: "⮳";
   display: inline-block;
   margin-right: 0.25em;
@@ -659,10 +707,35 @@ video::cue {
   transition: color 0.3s ease;
 }
 
+<<<<<<< HEAD
 .continut-pagina a[href^=http]:hover::before {
   color: var(--culoare-sageata-hover);
 }
 
+=======
+.continut-paginaa[href^="http"]:hover::before {
+  color: var(--culoare-sageata-hover);
+}
+
+.continut-pagina a {
+  padding: 0.15em 0.3em;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: background-size 0.4s ease, border-color 0.2s ease;
+
+  background-image: radial-gradient(
+    ellipse,
+    var(--culoare-text) 0%,
+    var(--culoare-text) 40%,
+    transparent 80%,
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0 0;
+}
+
+>>>>>>> bb77d6396acf310bb471b44a15b45fbf47317405
 .continut-pagina a:hover {
   background-size: 100% 100%;
 }
@@ -671,6 +744,7 @@ video::cue {
   border: 2px solid var(--culoare-bg);
 }
 
+<<<<<<< HEAD
 /* Galerie */
 #grid-galerie {
   display: grid;
@@ -836,3 +910,13 @@ video::cue {
     grid-template-columns: 1fr;
   }
 }
+=======
+
+
+
+
+
+
+
+/*# sourceMappingURL=general.css.map */
+>>>>>>> bb77d6396acf310bb471b44a15b45fbf47317405
